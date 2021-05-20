@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  # deviseを使用する際にURLとしてusersを含むことを示しています
+  devise_for :users
+  # トップページをルートパスとする
+  root to: 'homes#top'
+  
+  
 end
