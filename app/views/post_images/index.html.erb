@@ -1,10 +1,18 @@
-<!--コントローラから渡された@post_images変数内から1つずつ取り出して、post_image変数へ格納します。-->
 <% @post_images.each do |post_image| %>
 <div>
-  <%= attachment_image_tag post_image, :image %>
-  <p>投稿ユーザー画像：<%= image_tag('sample-author1.jpg') %></p>
+  <!--↑コントローラから渡された@post_images変数内から1つずつ取り出して、post_image変数へ格納します。-->
+  <%= link_to post_image_path(post_image.id) do %>
+  <!--↑一覧画面に詳細画面リンクを設定する-->
+  <%= attachment_image_tag post_image, :image ,size:'100x100'%>
+  <!--↑post_image変数のimage_idに保存された画像のimgタグを生成します。-->
+  <% end %>
+  <!--link_toでは、doからendの間が、aタグで囲まれた状態になります-->
+  <p>投稿ユーザー画像：<%= image_tag('sample-author1.jpg',size:'100x100') %></p>
   <p>ショップ名：<%= post_image.shop_name %></p>
+  <!--post_image変数のshop_nameカラムを表示します。-->
   <p>説明：<%= post_image.caption %></p>
+  <!--post_image変数のcaptionカラムを表示します。-->
   <p>ユーザーネーム：<%= post_image.user.name %></p>
+
 </div>
 <% end %>
