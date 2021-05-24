@@ -1,5 +1,4 @@
 class VegetableRecord < ApplicationRecord
-  has_many :post_images, dependent: :destroy
+  has_many :post_images
   
-  attachment :profile_image
 end

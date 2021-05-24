@@ -31,8 +31,16 @@
               <%= link_to 'マイページ', user_path(current_user.id) , class: 'nav-link text-dark'%>
             </li>
             <li class="nav-item">
-              <%= link_to 'Users',users_path, class: 'nav-link text-dark' %>
+              <%= link_to '生産者一覧',users_path, class: 'nav-link text-dark' %>
             </li>
+            <li class="nav-item">
+              <%= link_to '栽培管理',vegetable_records_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to '記録投稿', new_vegetable_record_path, class: 'nav-link text-dark' %>
+            </li>
+            
+           
             
             <% else %>
             <li class="nav-item">
