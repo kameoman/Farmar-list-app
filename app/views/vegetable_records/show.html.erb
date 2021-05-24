@@ -1,24 +1,49 @@
+<div class="container px-5 px-sm-0" >
+      <div class="row">
+        <div class="col-md-3">
+<p id="notice"><%= notice %></p>
+<h2>User info</h2>
+          <!--<img class=と入力する-->
+         <table class= "table">
+            <tbody>
+              <tr><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %></tr>
+              <tr>
+                <th>name</th>
+                <th><%= @user.name %></th>
+              </tr>
+              <tr>
+                <th><%= link_to edit_user_path(current_user) ,class: "btn btn-outline-secondary btn-block fas fa-user-cog" do %>
+              <% end %></th>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          
+          <div class="col-md-6 offset-md-1">
+<h3>登録品目ごとの詳細画面</h3>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>品目名:</strong>
   <%= @vegetable_record.name %>
 </p>
 
 <p>
-  <strong>Varaiety:</strong>
+  <strong>品種名:</strong>
   <%= @vegetable_record.varaiety %>
 </p>
 
 <p>
-  <strong>date:</strong>
+  <strong>播種日:</strong>
   <%= @vegetable_record.date %>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @vegetable_record.image %>
+  <strong>収穫見込み:</strong>
+  <%= @vegetable_record.date %>日から可能
 </p>
 
-<%= link_to 'Edit', edit_vegetable_record_path(@vegetable_record) %> |
-<%= link_to 'Back', vegetable_records_path %>
+<%= link_to '編集', edit_vegetable_record_path(@vegetable_record) %> |
+<%= link_to '戻る', vegetable_records_path %>
+</div>
+</div>

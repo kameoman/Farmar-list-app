@@ -4,10 +4,14 @@ class VegetableRecordsController < ApplicationController
   # GET /vegetable_records or /vegetable_records.json
   def index
     @vegetable_records = VegetableRecord.all
+    @users = User.all
+    @user = current_user
   end
 
   # GET /vegetable_records/1 or /vegetable_records/1.json
   def show
+    @users = User.all
+    @user = current_user
   end
 
   # GET /vegetable_records/new
