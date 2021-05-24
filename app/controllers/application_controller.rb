@@ -6,13 +6,11 @@ class ApplicationController < ActionController::Base
     post_images_path
   end
   
-  
-  
   protected
 
   def configure_permitted_parameters
     # ユーザ登録（sign_up）の際に、ユーザ名（name）のデータ操作が許可されます。
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email],)
   end
   
 end

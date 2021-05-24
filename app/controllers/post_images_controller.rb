@@ -13,6 +13,7 @@ class PostImagesController < ApplicationController
 
   def index
      @post_images = PostImage.all
+     @vegetables = VegetableRecord.all
   end
 
   def show
@@ -31,4 +32,7 @@ class PostImagesController < ApplicationController
     params.require(:post_image).permit(:shop_name, :image, :caption)
   end
    
+  def vegetable_record_params
+    params.require(:vegetable_record).permit(:name, :varaiety, :body, :image,:date)
+  end
 end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vegetable_record.name %>
+</p>
+
+<p>
+  <strong>Varaiety:</strong>
+  <%= @vegetable_record.varaiety %>
+</p>
+
+<p>
+  <strong>date:</strong>
+  <%= @vegetable_record.date %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @vegetable_record.image %>
+</p>
+
+<%= link_to 'Edit', edit_vegetable_record_path(@vegetable_record) %> |
+<%= link_to 'Back', vegetable_records_path %>

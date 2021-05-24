@@ -11,5 +11,5 @@ class User < ApplicationRecord
 # :validatable（emailのフォーマットなどのバリデーション）
   
   has_many :post_images, dependent: :destroy
-
+  attachment :profile_image
 end
